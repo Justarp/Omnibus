@@ -1,8 +1,8 @@
-# ComicSeek
+# Omnibus
 
 ## Project Overview
 
-ComicSeek is an AI-powered multimodal comic book discovery and search engine.
+Omnibus is an AI-powered multimodal comic book discovery and search engine.
 
 The goal is to build a real search and recommendation system that allows users to discover comic books using natural language, structured filters, and eventually images.
 

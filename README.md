@@ -1,4 +1,4 @@
-# ComicSeek
+# Omnibus
 
 A semantic search and recommendation engine for comic books.
 

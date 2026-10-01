@@ -1,15 +1,15 @@
 services:
   db:
     image: pgvector/pgvector:pg16
-    container_name: comicseek-db
+    container_name: omnibus-db
     environment:
-      POSTGRES_USER: ${POSTGRES_USER:-comicseek}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-comicseek}
-      POSTGRES_DB: ${POSTGRES_DB:-comicseek}
+      POSTGRES_USER: ${POSTGRES_USER:-omnibus}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-omnibus}
+      POSTGRES_DB: ${POSTGRES_DB:-omnibus}
     ports:
       - "${POSTGRES_PORT:-5432}:5432"
     volumes:
-      - comicseek-pgdata:/var/lib/postgresql/data
+      - omnibus-pgdata:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
       interval: 5s
@@ -17,4 +17,4 @@ services:
       retries: 10
 
 volumes:
-  comicseek-pgdata:
+  omnibus-pgdata:
