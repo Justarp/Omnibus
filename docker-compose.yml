@@ -1,0 +1,20 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: comicseek-db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-comicseek}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-comicseek}
+      POSTGRES_DB: ${POSTGRES_DB:-comicseek}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - comicseek-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  comicseek-pgdata:

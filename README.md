@@ -46,4 +46,11 @@ Retrieval is done by actual vector search. An LLM does not choose the results.
 
 ## Running locally
 
-Setup instructions will be added as each component is built.
+Requires [Docker Desktop](https://www.docker.com/products/docker-desktop/).
+
+```bash
+cp .env.example .env          # then fill in real values
+docker compose up -d          # start Postgres + pgvector on localhost:5432
+```
+
+More setup instructions will be added as each component is built.
