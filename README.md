@@ -53,4 +53,19 @@ cp .env.example .env          # then fill in real values
 docker compose up -d          # start Postgres + pgvector on localhost:5432
 ```
 
+### Backend
+
+Requires Python 3.11+.
+
+```bash
+cd backend
+python -m venv .venv
+source .venv/bin/activate     # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload # API on http://localhost:8000, docs at /docs
+pytest                        # run tests
+```
+
+`GET /health` reports whether the API can reach the database.
+
 More setup instructions will be added as each component is built.
